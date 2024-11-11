@@ -40,6 +40,33 @@ class DetailScreen extends StatelessWidget {
                 ),
                       ),
             ],
+          ),
+          //DETAIL INFO
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                //info atas
+                const SizedBox(
+                  height: 16,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      candi.name,
+                      style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    IconButton(
+                      onPressed: (){}, 
+                      icon: const Icon(Icons.favorite_border))
+                  ],
+                )
+                //info tengah
+                //info bawah
+              ],
+            )
           )
         ],
       ),
