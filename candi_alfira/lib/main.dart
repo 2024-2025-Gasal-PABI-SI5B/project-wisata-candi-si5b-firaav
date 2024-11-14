@@ -1,4 +1,5 @@
 import 'package:candi_alfira/data/candi_data.dart';
+import 'package:candi_alfira/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:candi_alfira/screens/detail_screen.dart';
 void main() {
@@ -16,7 +17,8 @@ class MainApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true  
       ),
-      home: DetailScreen(candi: candiList[0]),
+      //home: DetailScreen(candi: candiList[0]),
+      home: ProfileScreen(),
     );
   }
 }
