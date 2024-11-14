@@ -159,7 +159,7 @@ class DetailScreen extends StatelessWidget {
                     const SizedBox(
                       height: 16,
                     ),
-                    Text('Galeri',
+                    const Text('Galeri',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -168,7 +168,10 @@ class DetailScreen extends StatelessWidget {
                     const SizedBox(height: 10,),
                     SizedBox(),
                     const SizedBox(height: 4,),
-                    Text(''),
+                    const Text(
+                      'Tap untuk memperbesar',
+                      style: TextStyle(fontSize: 12, color: Colors.black54),
+                    ),
                   ],
                 ),
               )
