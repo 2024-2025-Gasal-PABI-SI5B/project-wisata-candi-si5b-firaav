@@ -43,8 +43,9 @@ class DetailScreen extends StatelessWidget {
           ),
           //DETAIL INFO
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //info atas
                 const SizedBox(
@@ -125,8 +126,21 @@ class DetailScreen extends StatelessWidget {
                 //pemisah
                 const SizedBox (height: 16,),
                 Divider(color :Colors.deepPurple.shade100),
-                const SizedBox(height: 16,)
+                const SizedBox(height: 16,),
                 //info bawah
+                const Text(
+                  'Deskripsi',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  candi.description,
+                )
               ],
             )
           )
