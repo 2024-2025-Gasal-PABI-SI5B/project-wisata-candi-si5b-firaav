@@ -11,7 +11,20 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            height: 200,
+            width: double.infinity,
+            color: Colors.deepPurple,
+          ),
+          Column(
+            children: [],
+          ),
+        ],
+      ),
+    );
   }
 
 }
