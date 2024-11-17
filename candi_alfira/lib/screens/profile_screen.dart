@@ -9,6 +9,7 @@ class ProfileScreen extends StatefulWidget {
   }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  //TODO: 1.deklarasikan vaariable
   @override
   Widget build(BuildContext context) {
     return Scaffold(
