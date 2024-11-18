@@ -61,6 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
                 //TODO: 3. bagian profile info profil
+                //baris 1 profile
                 const SizedBox(height: 20,),
                 Divider(color: Colors.deepPurple[100],),
                 const SizedBox(height: 4,),
@@ -74,7 +75,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(width: 8,),
                           Text('Pengguna', style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
-                            )
+                            ),
                         ],
                       ),
                     ),
@@ -85,8 +86,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                   ],
                 ),
-                //Baris 2 Nama
-                const SizedBox(height: 4,),
+                //  baris 2 nama
+                  const SizedBox(height: 4,),
                 Divider(color: Colors.deepPurple[100],),
                 const SizedBox(height: 4,),
                 Row(
@@ -99,11 +100,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(width: 8,),
                           Text('Nama', style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
-                            )
+                            ),
                         ],
                       ),
-                //baris 3 favorite
-                const SizedBox(height: 4,),
+                    ),
+                    Expanded(
+                      child: Text(
+                        ':$fullName', 
+                        style: TextStyle(fontSize: 18),)
+                      ),
+                      if(isSignedin) const Icon(Icons.edit),
+                  ],
+                ),
+                //baris 3 favorit
+                  const SizedBox(height: 4,),
                 Divider(color: Colors.deepPurple[100],),
                 const SizedBox(height: 4,),
                 Row(
@@ -116,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(width: 8,),
                           Text('Favorite', style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
-                            )
+                            ),
                         ],
                       ),
                     ),
@@ -127,9 +137,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                   ],
                 ),
-
                 //TODO: 4. Profile Action (tombol sign in dan out)
-            
+                const SizedBox(height: 20,),
+                Divider(color: Colors.deepPurple[100],),
+                const SizedBox(height: 4,),
+                isSignedin ? TextButton(onPressed: (){}, child: const Text('Sign Out'))
+                  : TextButton(onPressed: (){}, child:  const Text('Sign In'))
               ],
             ),
           ),
