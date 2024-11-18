@@ -10,9 +10,9 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   //TODO: 1.deklarasikan vaariable yang dibutuhkan
-  bool isSignedin = false;
-  String fullName = '';
-  String userName = '';
+  bool isSignedin = true;
+  String fullName = 'AlfiraRahmadhina';
+  String userName = 'alfrahma';
   int favoriteCandiCount = 0;
   @override
   Widget build(BuildContext context) {
@@ -29,24 +29,105 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Column(
               children: [
                 //TODO: 2.bagian profile header
-                Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.deepPurple,
-                          width: 2,
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 150),
+                    child: Stack(
+                      alignment: Alignment.bottomRight,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.deepPurple,
+                              width: 2,
+                            ),
+                            shape: BoxShape.circle),
+                          child: const CircleAvatar(
+                            radius: 50,
+                            backgroundImage: 
+                                AssetImage('images/placeholder_image.png'),
+                          ),
                         ),
-                        shape: BoxShape.circle),
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundImage: 
-                            AssetImage('images/placeholder_image.png'),
-                      )
-                    )
-                  ],
-                )
+                        if(isSignedin)
+                          IconButton(
+                            onPressed: () {}, 
+                            icon: Icon(
+                              Icons.camera_alt,
+                              color: Colors.deepPurple[50],
+                            ))
+                      ],
+                    ),
+                  ),
+                ),
                 //TODO: 3. bagian profile info profil
+                const SizedBox(height: 20,),
+                Divider(color: Colors.deepPurple[100],),
+                const SizedBox(height: 4,),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width/3,
+                      child: const Row(
+                        children: [
+                          Icon(Icons.lock, color: Colors.amber,),
+                          SizedBox(width: 8,),
+                          Text('Pengguna', style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                            )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        ':$userName', 
+                        style: TextStyle(fontSize: 18),)
+                      ),
+                  ],
+                ),
+                //Baris 2 Nama
+                const SizedBox(height: 4,),
+                Divider(color: Colors.deepPurple[100],),
+                const SizedBox(height: 4,),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width/3,
+                      child: const Row(
+                        children: [
+                          Icon(Icons.person, color: Colors.blue,),
+                          SizedBox(width: 8,),
+                          Text('Nama', style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                            )
+                        ],
+                      ),
+                //baris 3 favorite
+                const SizedBox(height: 4,),
+                Divider(color: Colors.deepPurple[100],),
+                const SizedBox(height: 4,),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width/3,
+                      child: const Row(
+                        children: [
+                          Icon(Icons.favorite, color: Colors.red,),
+                          SizedBox(width: 8,),
+                          Text('Favorite', style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                            )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        ':$favoriteCandiCount', 
+                        style: TextStyle(fontSize: 18),)
+                      ),
+                  ],
+                ),
+
                 //TODO: 4. Profile Action (tombol sign in dan out)
             
               ],
