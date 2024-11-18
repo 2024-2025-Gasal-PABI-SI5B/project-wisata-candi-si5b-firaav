@@ -14,6 +14,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String fullName = 'AlfiraRahmadhina';
   String userName = 'alfrahma';
   int favoriteCandiCount = 0;
+
+  //TODO : Imlementasi fungsi SignIn
+  void signIn(){
+    setState(() {
+      isSignedin = isSignedin;
+    });
+  }
+  //TODO:  Implementasi fungsi SignOut
+  void signOut(){
+    setState(() {
+      isSignedin = isSignedin
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,8 +154,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 const SizedBox(height: 20,),
                 Divider(color: Colors.deepPurple[100],),
                 const SizedBox(height: 4,),
-                isSignedin ? TextButton(onPressed: (){}, child: const Text('Sign Out'))
-                  : TextButton(onPressed: (){}, child:  const Text('Sign In'))
+                isSignedin ? TextButton(onPressed: signOut, child: const Text('Sign Out'))
+                  : TextButton(onPressed: signIn, child:  const Text('Sign In'))
               ],
             ),
           ),
